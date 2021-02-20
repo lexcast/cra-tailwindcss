@@ -3,18 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "autoprefixer": "^9.8.5",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "@craco/craco": "^6.1.1",
+    "@tailwindcss/postcss7-compat": "^2.0.3",
+    "autoprefixer": "^9",
+    "postcss": "^7",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "start:tw": "./node_modules/.bin/postcss ./src/styles/tailwind.css -o ./src/styles/index.css",
-    "build": "react-scripts build",
-    "build:tw": "./node_modules/.bin/postcss ./src/styles/tailwind.css -o ./src/styles/index.css --env production",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -32,8 +34,8 @@
     ]
   },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^2.3.0",
-    "postcss-cli": "^7.1.1",
-    "tailwindcss": "^1.5.1"
+    "@fullhuman/postcss-purgecss": "^4.0.0",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   }
 }
